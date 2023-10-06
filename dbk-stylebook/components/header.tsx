@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { logEvent } from "firebase/analytics";
+import { analytics } from "@/firebase"
 
 interface HeaderProps {
     setSearchInput: (input: string) => void;
@@ -6,10 +8,22 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ setSearchInput }) => {
     const [input, setInput] = useState('');
+    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
     const handleSearch = (e: any) => {
         setInput(e.target.value);
         setSearchInput(e.target.value);
+
+        // clear the previous timeout to ensure log event doesn't fire before user finishes typing
+        if (timeoutId) clearTimeout(timeoutId);
+
+        // set a new timeout to log event after user has stopped typing for 1500ms
+        const id = setTimeout(() => {
+            logEvent(analytics, 'search', { search_term: e.target.value });
+            console.log(`${e.target.value} logged to analytics`);
+        }, 1500);
+
+        setTimeoutId(id);
     };
 
     return (
