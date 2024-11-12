@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Sun, Moon } from 'lucide-react';
 
 interface HeaderProps {
     setSearchInput: (input: string) => void;
@@ -6,6 +7,19 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ setSearchInput }) => {
     const [input, setInput] = useState('');
+    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
@@ -58,7 +72,18 @@ const Header: React.FC<HeaderProps> = ({ setSearchInput }) => {
                             </svg>
                         </button>
                     </div>
-                    </div>
+
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        {theme === 'light' ? (
+                            <Moon className="h-5 w-5" />
+                        ) : (
+                            <Sun className="h-5 w-5" />
+                        )}
+                    </button>
+                </div>
                 </div>
             </div>
         </div>
