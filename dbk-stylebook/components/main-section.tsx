@@ -23,7 +23,7 @@ const MainSection: React.FC<MainSectionProps> = ({ searchInput, initialData }) =
       <span>
         {parts.map((part, i) =>
           part.toLowerCase() === lowercasedSearchInput ? (
-            <span key={i} className="bg-yellow-300 dark:bg-pink-700">
+            <span key={i} className="bg-yellow-300 dark:bg-blue-400">
               {part}
             </span>
           ) : (
@@ -110,7 +110,7 @@ const MainSection: React.FC<MainSectionProps> = ({ searchInput, initialData }) =
               id={item.term!}
               className="relative block overflow-hidden rounded-lg border border-gray-100 my-6 p-4 sm:p-6 lg:p-8 dark:border-gray-900"
             >
-              <span className="absolute inset-x-0 bottom-0 h-2 bg-red-500 dark:bg-blue-500"></span>
+              <span className="absolute inset-x-0 bottom-0 h-2 bg-red-500 dark:bg-red-600"></span>
               <div className="sm:flex sm:justify-between sm:gap-4">
                 <div className="w-full flex flex-row justify-between">
                   <div>
@@ -121,13 +121,13 @@ const MainSection: React.FC<MainSectionProps> = ({ searchInput, initialData }) =
                     </div>
 
                     {item.important && (
-                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-blue-400">Important</p>
+                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-red-500">Important</p>
                     )}
                     {item.sports && (
-                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-blue-400">Sports</p>
+                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-red-500">Sports</p>
                     )}
                     {item.ap && (
-                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-blue-400">AP Deviation</p>
+                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-red-500">AP Deviation</p>
                     )}
                   </div>
                 </div>
