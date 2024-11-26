@@ -23,7 +23,7 @@ const MainSection: React.FC<MainSectionProps> = ({ searchInput, initialData }) =
       <span>
         {parts.map((part, i) =>
           part.toLowerCase() === lowercasedSearchInput ? (
-            <span key={i} className="bg-yellow-300">
+            <span key={i} className="bg-yellow-300 dark:bg-pink-700">
               {part}
             </span>
           ) : (
@@ -101,33 +101,33 @@ const MainSection: React.FC<MainSectionProps> = ({ searchInput, initialData }) =
       {sortedLetters.map((letter, index) => (
         <div key={index} className="mb-4">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">{letter}</h1>
+            <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl dark:text-gray-100">{letter}</h1>
             <Separator className="my-4" />
           </div>
           {groupedByLetter[letter].map((item: Tables<'stylebook'>, itemIndex: number) => (
             <div
               key={itemIndex}
               id={item.term!}
-              className="relative block overflow-hidden rounded-lg border border-gray-100 my-6 p-4 sm:p-6 lg:p-8"
+              className="relative block overflow-hidden rounded-lg border border-gray-100 my-6 p-4 sm:p-6 lg:p-8 dark:border-gray-900"
             >
-              <span className="absolute inset-x-0 bottom-0 h-2 bg-red-500"></span>
+              <span className="absolute inset-x-0 bottom-0 h-2 bg-red-500 dark:bg-blue-500"></span>
               <div className="sm:flex sm:justify-between sm:gap-4">
                 <div className="w-full flex flex-row justify-between">
                   <div>
                     <div className="w-full flex flex-row justify-between items-center">
-                      <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+                      <h3 className="text-lg font-bold text-gray-900 sm:text-xl dark:text-gray-100">
                         {highlightText(item.term!)}
                       </h3>
                     </div>
 
                     {item.important && (
-                      <p className="mt-1 text-xs font-medium text-red-600">Important</p>
+                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-blue-400">Important</p>
                     )}
                     {item.sports && (
-                      <p className="mt-1 text-xs font-medium text-red-600">Sports</p>
+                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-blue-400">Sports</p>
                     )}
                     {item.ap && (
-                      <p className="mt-1 text-xs font-medium text-red-600">AP Deviation</p>
+                      <p className="mt-1 text-xs font-medium text-red-600 dark:text-blue-400">AP Deviation</p>
                     )}
                   </div>
                 </div>

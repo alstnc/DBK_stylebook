@@ -36,9 +36,9 @@ const Sidebar: React.FC<SidebarProps> = ({ initialData }) => {
     });
 
     return (
-        <div className="flex flex-col h-full bg-white">
+        <div className="flex flex-col h-full bg-white dark:bg-slate-950">
             <ScrollArea className="w-full h-full">
-                <div className="flex h-screen flex-col justify-between border-e bg-white">
+                <div className="flex h-screen flex-col justify-between border-e bg-white dark:bg-slate-950">
                     <div className="px-4">
                         <ul className="mt-6 space-y-1">
                             {
@@ -46,7 +46,7 @@ const Sidebar: React.FC<SidebarProps> = ({ initialData }) => {
                                     <li key={letter}>
                                         <details className="group">
                                             <summary
-                                                className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                                                className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-900 dark:hover:text-gray-300"
                                             >
                                                 <span className="text-sm font-medium">{letter}</span>
 
@@ -63,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({ initialData }) => {
                                                         <li key={index}>
                                                             <a
                                                                 onClick={(e) => handleScroll(e, item.term)}
-                                                                className="hover:cursor-pointer block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                                                                className="hover:cursor-pointer block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-900 dark:hover:text-gray-300"
                                                             >
                                                                 {item.term}
                                                             </a>
