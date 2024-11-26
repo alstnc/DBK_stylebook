@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ setSearchInput }) => {
                         <label className="sr-only" htmlFor="search"> Search </label>
 
                         <input
-                            className="h-10 w-full rounded-full border-none bg-white pe-10 ps-4 text-sm shadow-md sm:w-56 dark:bg-gray-900"
+                            className="h-10 w-full rounded-full border-none bg-white pe-10 ps-4 text-sm shadow-md sm:w-56 dark:bg-neutral-900"
                             id="search"
                             type="search"
                             placeholder="Search"
@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ setSearchInput }) => {
 
                         <button
                             type="button"
-                            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-gray-50 p-2 text-gray-700 transition hover:text-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:text-white" 
+                            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-gray-50 p-2 text-gray-700 transition hover:text-gray-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:text-white" 
                         >
                             <span className="sr-only">Search</span>
                             <svg

@@ -36,9 +36,9 @@ const Sidebar: React.FC<SidebarProps> = ({ initialData }) => {
     });
 
     return (
-        <div className="flex flex-col h-full bg-white dark:bg-slate-950">
+        <div className="flex flex-col h-full bg-white dark:bg-zinc-900">
             <ScrollArea className="w-full h-full">
-                <div className="flex h-screen flex-col justify-between border-e bg-white dark:bg-slate-950">
+                <div className="flex h-screen flex-col justify-between border-e bg-white dark:bg-zinc-900">
                     <div className="px-4">
                         <ul className="mt-6 space-y-1">
                             {

@@ -108,7 +108,7 @@ const MainSection: React.FC<MainSectionProps> = ({ searchInput, initialData }) =
             <div
               key={itemIndex}
               id={item.term!}
-              className="relative block overflow-hidden rounded-lg border border-gray-100 my-6 p-4 sm:p-6 lg:p-8 dark:border-gray-900"
+              className="relative block overflow-hidden rounded-lg border border-gray-100 my-6 p-4 sm:p-6 lg:p-8 dark:border-gray-700 dark:bg-zinc-900"
             >
               <span className="absolute inset-x-0 bottom-0 h-2 bg-red-500 dark:bg-red-600"></span>
               <div className="sm:flex sm:justify-between sm:gap-4">
