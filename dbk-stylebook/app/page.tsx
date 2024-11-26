@@ -22,7 +22,7 @@ export default function Home() {
   const loading = !stylebookData && !error;
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col dark:bg-zinc-900">
       {loading ? (
         <div></div>
       ) : (
