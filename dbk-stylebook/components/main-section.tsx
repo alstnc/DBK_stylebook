@@ -16,7 +16,8 @@ const MainSection: React.FC<MainSectionProps> = ({ searchInput, initialData }) =
 
   const lowercasedSearchInput = searchInput.toLowerCase();
 
-  const highlightText = (text: string) => {
+  const highlightText = (text: string | null | undefined) => {
+    if (!text) return '';
     if (!searchInput) return text;
     const parts = text.split(new RegExp(`(${searchInput})`, 'gi'));
     return (
